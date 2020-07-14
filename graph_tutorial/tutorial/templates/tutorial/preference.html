@@ -1,0 +1,32 @@
+{% extends "tutorial/layout.html" %}
+{% block content %}
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<form action="{% url 'schedule' %}" method="post">
+{% csrf_token %}
+
+    <strong>When would you like to have the meeting?</strong><br>
+    <input type="radio" name="when" id="choice1-1" value="1">
+    <label for="choice1-1">today</label><br>
+    <input type="radio" name="when" id="choice1-2" value="2">
+    <label for="choice1-2">this week</label><br>
+    <input type="radio" name="when" id="choice1-3" value="3">
+    <label for="choice1-3">next week</label><br>
+
+    <strong>How long will the meeting be?</strong><br>
+    <input type="radio" name="howlong" id="choice2-1" value="1">
+    <label for="choice2-1">one hour</label><br>
+    <input type="radio" name="howlong" id="choice2-2" value="2">
+    <label for="choice2-2">two hours</label><br>
+    <input type="radio" name="howlong" id="choice2-3" value="3">
+    <label for="choice2-3">three hours</label><br>
+
+    <strong>Is that an important meeting that you want to have in your private time (during lunch time or after 5pm)</strong><br>
+    <input type="radio" name="important" id="choice3-1" value="1">
+    <label for="choice3-1">yes</label><br>
+    <input type="radio" name="important" id="choice3-2" value="2">
+    <label for="choice3-2">no</label><br>
+
+    <input type="submit" value="submit">
+</form>
+{% endblock %}
+

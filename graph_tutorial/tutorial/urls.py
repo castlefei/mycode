@@ -10,4 +10,6 @@ urlpatterns = [
   path('callback', views.callback, name='callback'),
   path('signout', views.sign_out, name='signout'),
   path('calendar', views.calendar, name='calendar'),
+  path('schedule', views.schedule, name='schedule'),
+  path('preference', views.preference, name='preference'),
 ]
